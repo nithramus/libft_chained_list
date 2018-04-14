@@ -8,6 +8,6 @@ void ft_puterror(char *error_message)
     while (error_message[i]) {
         i++;
     }
-    write(2, error_message, i);
-    write(2, "\n", 1);
+    i = write(2, error_message, i);
+    i = write(2, "\n", 1);
 }

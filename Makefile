@@ -16,24 +16,24 @@ SRC_PATH = libft_chained_list_src
 
 OBJ_PATH = libft_chained_list_obj
 
-SRC = 
+SRC = add_back_maillon.o\
+ 	  add_front_maillon.o\
+	  create_maillon.o\
+	  delete_chained_list.o\
+	  ft_putendl.o\
+	  function_on_chained_list.o\
+	  remove_maillon.o\
 
 CC = gcc
 
-LIB =  
-
-FLAG = -Wall -Wextra -Werror -O
+FLAG = -Wall -Wextra -Werror -O -g
 
 SRC_O = $(addprefix $(OBJ_PATH)/,$(SRC))
-SRC_C = $(addprefix $(SRC_PATH)/,$(SRC))
 
-all: EXEC $(NAME)
+all: $(NAME)
 
 $(NAME): $(SRC_O)
-	ar rc $(NAME) $(SRC_O) $(LIB)
-
-EXEC: 
-	make -C libft
+	ar rc $(NAME) $(SRC_O)
 
 $(OBJ_PATH)/%.o:$(SRC_PATH)/%.c
 	$(CC) -c $< -o $@ $(FLAG)

@@ -16,5 +16,6 @@ t_libft_chained_list *create_maillon(t_libft_chained_list *next, t_libft_chained
     }
     maillon->next = next;
     maillon->before = before;
+    maillon->data = data;
     return (maillon);
 }

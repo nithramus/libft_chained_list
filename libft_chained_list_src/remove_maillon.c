@@ -1,12 +1,12 @@
 #include "libft_chained_list.h"
 
-static void    free_maillon(t_libft_chained_list *maillon) 
+void    free_maillon(t_libft_chained_list *maillon, void (*delete_data)(void*))
 {
-    free(maillon->data);
+    (*delete_data)(maillon->data);
     free(maillon);
 }
 
-void    remove_maillon(t_libft_chained_list **first, t_libft_chained_list *maillon)
+void    remove_maillon(t_libft_chained_list **first, t_libft_chained_list *maillon, void (*delete_data)(void*))
 {
     if (!maillon)
     {
@@ -17,13 +17,14 @@ void    remove_maillon(t_libft_chained_list **first, t_libft_chained_list *maill
     {
         if (!maillon->next)
         {
-            free_maillon(maillon);
+            free_maillon(maillon, delete_data);
             *first = NULL;
         }
         else
         {
             *first = (*first)->next;
-            free_maillon(maillon);
+            (*first)->before = NULL;
+            free_maillon(maillon,delete_data);
         }
     }
     else
@@ -33,6 +34,6 @@ void    remove_maillon(t_libft_chained_list **first, t_libft_chained_list *maill
         {
             maillon->next->before = maillon->before;
         }
-        free(maillon);
+        free_maillon(maillon,delete_data);
     }
 }

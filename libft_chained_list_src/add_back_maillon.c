@@ -2,15 +2,18 @@
 
 void    add_back_maillon(t_libft_chained_list **first, void *data)
 {
+    t_libft_chained_list *tmp;
+
     if (!(*first))
     {
         *first = create_maillon(NULL, NULL, data);
     }
     else
-    {
-        while ((*first)->next) {
-            (*first) = (*first)->next;
+    {   
+        tmp = *first;
+        while (tmp->next) {
+            tmp = tmp->next;
         }
-        (*first)->next = create_maillon(NULL, first, data);
+        tmp->next = create_maillon(NULL, tmp, data);
     }
 }

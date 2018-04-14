@@ -8,7 +8,10 @@ void    add_front_maillon(t_libft_chained_list **first, void *data)
     {
         *first = create_maillon(NULL, NULL, data);
     }
-    maillon = create_maillon(*first, NULL, data);
-    (*first)->before = maillon;
-    *first = maillon;
+    else
+    {
+        maillon = create_maillon(*first, NULL, data);
+        (*first)->before = maillon;
+        *first = maillon;
+    }
 }
