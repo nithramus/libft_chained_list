@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   delete_chained_list.c                              :+:      :+:    :+:   */
+/*   ft_puterror.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bandre <bandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/02 19:07:04 by bandre            #+#    #+#             */
-/*   Updated: 2018/05/02 19:07:54 by bandre           ###   ########.fr       */
+/*   Created: 2018/05/02 19:09:17 by bandre            #+#    #+#             */
+/*   Updated: 2018/05/02 19:09:55 by bandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_chained_list.h"
 
-void	free_chained_list(t_libft_chained_list **first,
-	t_libft_chained_list *maillon, void *params)
+void	ft_puterror(char *error_message)
 {
-	free(maillon);
-	first += 1 - 1;
-	params += 1 - 1;
-}
+	int i;
 
-void	delete_chained_list(t_libft_chained_list **first,
-	void delete_data(void*))
-{
-	simple_function_on_chained_list(first, delete_data);
-	function_on_chained_list(first, free_chained_list, NULL);
-	*first = NULL;
+	i = 0;
+	while (error_message[i])
+	{
+		i++;
+	}
+	i = write(2, error_message, i);
+	i = write(2, "\n", 1);
 }

@@ -1,13 +1,13 @@
 # **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: bandre <bandre@student.42.fr>              +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2016/12/07 16:17:12 by bandre            #+#    #+#              #
-#    Updated: 2018/04/12 19:01:27 by bandre           ###   ########.fr        #
-#                                                                              #
+#																			  #
+#														 :::	  ::::::::	#
+#	Makefile										   :+:	  :+:	:+:	#
+#													 +:+ +:+		 +:+	  #
+#	By: bandre <bandre@student.42.fr>			  +#+  +:+	   +#+		 #
+#												 +#+#+#+#+#+   +#+			#
+#	Created: 2016/12/07 16:17:12 by bandre			#+#	#+#			  #
+#	Updated: 2018/04/12 19:01:27 by bandre		   ###   ########.fr		#
+#																			  #
 # **************************************************************************** #
 
 NAME = libft_chained_list.a
@@ -20,7 +20,7 @@ SRC = add_back_maillon.o\
  	  add_front_maillon.o\
 	  create_maillon.o\
 	  delete_chained_list.o\
-	  ft_putendl.o\
+	  ft_puterrorw.o\
 	  function_on_chained_list.o\
 	  remove_maillon.o\
 
