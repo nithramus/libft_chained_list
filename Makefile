@@ -20,9 +20,10 @@ SRC = add_back_maillon.o\
  	  add_front_maillon.o\
 	  create_maillon.o\
 	  delete_chained_list.o\
-	  ft_puterrorw.o\
+	  ft_puterror.o\
 	  function_on_chained_list.o\
 	  remove_maillon.o\
+	  swap_maillon.o\
 
 CC = gcc
 
@@ -40,11 +41,9 @@ $(OBJ_PATH)/%.o:$(SRC_PATH)/%.c
 
 clean:
 	rm -f $(addprefix $(OBJ_PATH)/,$(SRC))
-	make -C libft clean
 
 fclean: clean
 	rm -f $(NAME)
-	make -C libft fclean
 
 re: fclean all
 
