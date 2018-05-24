@@ -6,7 +6,7 @@
 /*   By: bandre <bandre@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/02 19:10:31 by bandre            #+#    #+#             */
-/*   Updated: 2018/05/02 19:13:28 by bandre           ###   ########.fr       */
+/*   Updated: 2018/05/24 15:03:34 by bandre           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,7 @@ void	simple_function_on_chained_list(
 
 void	function_on_chained_list(
 	t_libft_chained_list **first,
-	void (*function)(t_libft_chained_list**,
-	t_libft_chained_list*, void*),
+	void (*function)(t_libft_chained_list*, void*),
 	void *params)
 {
 	t_libft_chained_list *tmp;
@@ -44,7 +43,7 @@ void	function_on_chained_list(
 	while (tmp)
 	{
 		tmp2 = tmp->next;
-		(*function)(first, tmp, params);
+		(*function)(tmp, params);
 		tmp = tmp2;
 	}
 }
