@@ -3,20 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   delete_chained_list.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bandre <bandre@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nithramir <nithramir@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/02 19:07:04 by bandre            #+#    #+#             */
-/*   Updated: 2018/05/02 19:07:54 by bandre           ###   ########.fr       */
+/*   Updated: 2018/07/18 14:34:13 by nithramir        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_chained_list.h"
 
-void	free_chained_list(t_libft_chained_list **first,
-	t_libft_chained_list *maillon, void *params)
+void	free_chained_list(t_libft_chained_list *maillon, void *params)
 {
 	free(maillon);
-	first += 1 - 1;
 	params += 1 - 1;
 }
 
